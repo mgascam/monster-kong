@@ -1,7 +1,6 @@
 import './style.css';
 import Icon from './icon.png';
 
-// function component() {
 const component = () => {
     let element = document.createElement('div');
 
