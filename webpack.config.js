@@ -6,6 +6,7 @@ module.exports = {
     entry: {
         app: './src/index.js'
     },
+    mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist',
