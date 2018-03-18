@@ -1,18 +1,4 @@
 import './style.css';
-import Icon from './icon.png';
-
-const component = () => {
-    let element = document.createElement('div');
-
-    element.innerHTML = ['Hello', 'webpack'].join(' ');
-    element.classList.add('hello');
-
-    var myIcon = new Image();
-    myIcon.src = Icon;
-
-    element.appendChild(myIcon);
-
-    return element;
-}
-
-document.body.appendChild(component());
+import PIXI from 'expose-loader?PIXI!phaser-ce/build/custom/pixi.js';
+import p2 from 'expose-loader?p2!phaser-ce/build/custom/p2.js';
+import Phaser from 'expose-loader?Phaser!phaser-ce/build/custom/phaser-split.js';
