@@ -46,10 +46,10 @@ const GameState = {
       this.ground.body.allowGravity = false;
       this.ground.body.immovable = true;
 
-      const platform = this.add.sprite(0, 300, 'platform');
-      this.game.physics.arcade.enable(platform);
-      platform.body.allowGravity = false;
-      platform.body.immovable = true;
+      this.platform = this.add.sprite(0, 300, 'platform');
+      this.game.physics.arcade.enable(this.platform);
+      this.platform.body.allowGravity = false;
+      this.platform.body.immovable = true;
 
       //create player
       this.player = this.add.sprite(100, 200, 'player', 3);
@@ -60,7 +60,11 @@ const GameState = {
   
     },
     update: function() {
-      
+        this.game.physics.arcade.collide(this.player, this.ground, this.landed);
+        this.game.physics.arcade.collide(this.player, this.platform, this.landed);
+    },
+    landed: (player, ground) => {
+
     }
     
   };
