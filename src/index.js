@@ -62,6 +62,9 @@ const GameState = {
       this.player.animations.add('walking', [0, 1, 2, 1], 6, true);
       this.player.play('walking');
       this.game.physics.arcade.enable(this.player);
+      this.player.customParams = {};
+
+      this.createOnScreenControls();
   
     },
     update: function() {
@@ -79,6 +82,15 @@ const GameState = {
         if (this.cursors.up.isDown && this.player.body.touching.down) {
             this.player.body.velocity.y = -this.JUMPING_SPEED;
         }
+    },
+    createOnScreenControls: function () {
+        this.leftArrow = this.add.button(20, 535, 'arrowButton');
+        this.rightArrow = this.add.button(110, 535, 'arrowButton');
+        this.actionButton = this.add.button(280, 535, 'actionButton');
+
+        this.leftArrow.alpha = 0.5;
+        this.rightArrow.alpha = 0.5;
+        this.actionButton.alpha = 0.5;
     }
     
   };
